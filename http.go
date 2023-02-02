@@ -238,6 +238,10 @@ func (ar *ApiResponse) ApiSuccessful() bool {
 	return ar.Code == ApiSuccess
 }
 
+func (ar *ApiResponse) Response() *Response {
+	return ar.response
+}
+
 // ReadData read the api response `data` as JSON into v.
 func (ar *ApiResponse) ReadData(v interface{}) error {
 	if !ar.HttpSuccessful() {
